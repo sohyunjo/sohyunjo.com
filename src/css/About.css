@@ -1,0 +1,15 @@
+.about .picture img {
+  max-width: 500px;
+}
+
+.about .description h1 {
+  font-size: 2rem;
+  margin: 0 0 1rem 0;
+}
+.about .description h2 {
+  font-style: italic;
+  font-size: 1.5rem;
+  margin: 0 0 2rem 0;
+}
+.about .description h3 {
+}
