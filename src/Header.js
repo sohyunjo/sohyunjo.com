@@ -1,17 +1,6 @@
 import React from 'react';
-import logoimg from './assets/img/logo.png';
 import { navItem } from './data/navItem';
-import './css/Header.css';
-
-const NavItem = ({ className, href, children, logo }) => {
-  return (
-    <div className='dtc v-mid'>
-      <a className={className} href={href} title={children}>
-        {logo ? <img className='logo-img' src={logoimg} /> : children}
-      </a>
-    </div>
-  );
-};
+import NavItem from './NavItem';
 
 class Header extends React.Component {
   constructor(props) {
@@ -20,16 +9,19 @@ class Header extends React.Component {
     this.state = {
       scrolled: false
     };
-    this.handleScroll = this.handleScroll.bind(this);
+    // this.handleScroll = this.handleScroll.bind(this);
   }
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll, true);
   }
 
-  handleScroll() {
+  toggleHover = () => {
+    this.setState({ hoverItem: !this.state.hoverItem });
+  };
+
+  handleScroll = () => {
     let pixels = window.pageYOffset;
-    const w = window.innerWidth;
 
     if (pixels > 300) {
       this.setState((state, props) => {
@@ -40,19 +32,18 @@ class Header extends React.Component {
         return { scrolled: false };
       });
     }
-  }
+  };
 
   render() {
     const { scrolled } = this.state;
 
     return (
-      <header className='z1 fixed w-100 pv3 tc'>
+      <header
+        className={`z-1 fixed w-100 pv3 tc f4 ${scrolled ? 'scrolled' : ''}`}
+      >
         <nav
           //   className='flex justify-around items-center tc'
-          className='dt collapse center w-70 '
-          //   className={`fixed db dt-l w-100 border-box pa2 ph5-l ${
-          //     scrolled ? 'scrolled' : ''
-          //   }`}
+          className='dt dt--fixed center w-70 '
         >
           {navItem.map(item => (
             <NavItem {...item} />

@@ -1,28 +1,29 @@
 export const navItem = [
   {
-    children: 'About',
-    href: 'about.html',
-    className: 'link dib no-underline'
+    children: 'about',
+    href: '/about',
+    className: 'link dib no-underline black relative highlight'
   },
   {
-    children: 'Work',
-    href: 'work.html',
-    className: 'link dib no-underline'
+    children: 'work',
+    href: '/work',
+    className: 'link dib no-underline black relative highlight'
   },
   {
     children: 'So Hyun Jo',
     logo: true,
-    href: 'index.html',
-    className: 'link dib no-underline'
+    exact: true,
+    href: '/',
+    className: 'link dib no-underline black relative highlight'
   },
   {
-    children: 'Fun',
-    href: 'fun.html',
-    className: 'link dib no-underline'
+    children: 'gallery',
+    href: '/gallery',
+    className: 'link dib no-underline black relative highlight'
   },
   {
-    children: 'Contact',
-    href: 'contact.html',
-    className: 'link dib no-underline'
+    children: 'contact',
+    href: '/contact',
+    className: 'link dib no-underline black relative highlight'
   }
 ];

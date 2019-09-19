@@ -1,16 +1,17 @@
 import React from 'react';
-import './css/App.css';
 import Header from './Header';
 import Footer from './Footer';
-import About from './About';
+import Main from './Main';
+import Home from './Home';
+import { Switch, Route, Link } from 'react-router-dom';
 import Tachyons from 'tachyons/css/tachyons.min.css';
 
 function App() {
   return (
     <div className='App relative min-h-100 w-100'>
-      <Header />
-      <About />
-      <Footer />
+      {/* <Header /> */}
+      <Home />
+      {/* <Footer /> */}
     </div>
   );
 }

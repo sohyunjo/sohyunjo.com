@@ -1,40 +1,74 @@
 import React from 'react';
-import './css/About.css';
-import cat from './assets/img/cat.jpg';
-
+import mypic from './assets/img/mypic.jpg';
+import { aboutDesc } from './data/aboutDesc';
+import Typist from 'react-typist';
+import Emoji from './Emoji';
 class About extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      imageLoaded: false
+    };
+  }
+
+  componentDidMount() {
+    const img = new Image();
+    img.src = mypic;
+
+    img.onload = () => {
+      this.setState({ imageLoaded: true });
+    };
   }
 
   render() {
+    const { imageLoaded } = this.state;
     return (
-      <div className='dt mw8 center pt0 pv5-m pv6-ns'>
-        <div className='db dtc-ns v-mid-ns'>
-          <img src={cat} alt='my portrait' className='w-100 mw9 w6-ns' />
+      <section className='about' ref={this.props.ref}>
+        <div className='mw9 w-80 pt5'>
+          <div
+            className='dt'
+            style={{ visibility: imageLoaded ? 'visible' : 'hidden' }}
+          >
+            {/* <div
+              className='db dtc-ns v-mid-ns ph3 relative'
+              style={{ animation: `fadein 1.5s 0.8s both` }}
+            >
+              <img
+                src={mypic}
+                alt='my portrait'
+                className='mypic w100 mw9 w6-ns h-50 hidden'
+              />
+            </div> */}
+            <div className='db dtc-ns v-mid ph3 pr0-ns pl5-ns pl3-m'>
+              {/* {aboutDesc.map((desc, delay) => (
+                <desc.tag
+                  className={desc.className}
+                  // style={{ animation: `fadein 1s ${delay}s both` }}
+                >
+                  {desc.children}
+                </desc.tag>
+              ))} */}
+              <h1 className='mb4 f-subheadline-l f1-m f-subheadline-ns relative lh-solid'>
+                <Typist avgTypingSpeed={40} startDelay={1000}>
+                  {/* <Typist.Delay ms={200}> */}
+                  <span>So Hyun Jo</span>
+                  <Typist.Backspace count={10} delay={500} />
+                  <span>Full Stack Developer</span>
+                  {/* </Typist.Delay> */}
+                </Typist>
+              </h1>
+              <h2
+                className='mb4 f2-l f3-m f3-ns i'
+                style={{ animation: `fadein 3s 3s both` }}
+              >
+                I specialize in creating immersive and beautiful web
+                applications through clean and efficient code. Based in{' '}
+                <Emoji symbol='🗽' label='statue of liberty' />
+              </h2>
+            </div>
+          </div>
         </div>
-        <div className='db dtc-ns v-mid ph2 pr0-ns pl3-ns'>
-          <h1>Full Stack Developer / NYC</h1>
-          <h2>
-            I specialize in creating immersive and beautiful web applications
-            through clean and efficient code.
-          </h2>
-          <p className='lh-copy'>
-            I consider myself a lifelong learner and my passion to make a
-            difference in the world as a software engineer drives me to further
-            study multiple modalities of computer science. I am passionate to
-            learn, develop, and apply my knowledge and expand my skills through
-            professional work, higher education, and personal projects.
-            <br></br>I am very thorough and detail-oriented with all my work as
-            I take great pride in all my creations from small to large scale
-            projects. I have really enjoyed the experience of how I can enrich
-            businesses and people's lives through coding and delivering projects
-            from my previous professional positions. I am currently looking for
-            new opportunities and I am excited to be a part of something new and
-            challenging.
-          </p>
-        </div>
-      </div>
+      </section>
     );
   }
 }
