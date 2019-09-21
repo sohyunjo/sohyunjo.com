@@ -1,7 +1,7 @@
 import React from 'react';
 import Gallery from './Gallery';
 import Contact from './Contact';
-import Work from './Work';
+import Works from './Works';
 import About from './About';
 import Header from './Header';
 
@@ -20,7 +20,7 @@ class Home extends React.Component {
       <div>
         <Header />
         <About ref={this.aboutRef} />
-        <Work ref={this.workRef} />
+        <Works ref={this.workRef} />
         <Gallery />
         <Contact />
       </div>

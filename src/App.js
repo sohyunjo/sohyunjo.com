@@ -11,7 +11,7 @@ function App() {
     <div className='App relative min-h-100 w-100'>
       {/* <Header /> */}
       <Home />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

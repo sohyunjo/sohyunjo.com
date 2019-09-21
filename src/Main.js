@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import About from './About';
 import Gallery from './Gallery';
-import Work from './Work';
+import Works from './Works';
 import Contact from './Contact';
 import Home from './Home';
 
@@ -25,7 +25,7 @@ const Main = () => (
     <Switch>
       <Route exact path='/' component={Home} />
       <Route path='/#about' component={About} />
-      <Route path='/#work' component={Work} />
+      <Route path='/#work' component={Works} />
       <Route path='/gallery' component={Gallery} />
       <Route path='/contact' component={Contact} />
       <Route component={Page404} />

@@ -13,13 +13,12 @@ class Footer extends React.Component {
       // all the way on the bottom
       // <footer className='wrapper z1 bottom-0 absolute'>
       <footer
-        className='fixed bottom-0 left-0 ml5 mr5 black-50   '
+        className='fixed bottom-0 left-0 black-50   '
         style={{
           writingMode: 'vertical-rl',
-          textOrientation: 'mixed'
-          // transform: 'rotate(180deg)'
-
-          // transform: 'translateY(50%)'
+          textOrientation: 'mixed',
+          // // transform: 'rotate(180deg)'
+          transform: 'translateX(50%)'
         }}
       >
         {/* <div className='korean'>

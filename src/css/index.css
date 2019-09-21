@@ -1,6 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=DM+Serif+Display&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300i&display=swap');
 
 html {
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -15,7 +18,7 @@ body {
 }
 
 #root {
-  font-size: 18px;
+  font-size: 24px;
 }
 
 .highlight {
@@ -51,7 +54,6 @@ body {
 header {
   top: -60px;
   transition: top 0.7s ease 0s;
-  font-family: 'DM Serif Display', serif;
 }
 
 header nav * {
@@ -62,9 +64,10 @@ header.scrolled {
   top: 0px;
 }
 
-h1 {
+/* header h1 {
   letter-spacing: 0.14em;
-}
+  
+} */
 
 .Cursor {
   color: #ffffff;
@@ -82,13 +85,42 @@ h1 {
 
 /* About */
 .about {
-  min-height: 80vh;
-  background-image: linear-gradient(#eae7dc, #ffffff);
-  color: #e85a4f;
+  background-color: #ffdcd5;
+  color: #00c09f;
 }
-
+.about h1 {
+  letter-spacing: 0.14em;
+  font-weight: 400;
+}
+.about .center-text {
+  color: #d757d1;
+  /* font-family: 'Onespoonpineapple'; */
+  font-family: 'Merriweather', serif;
+}
 .contact {
   min-height: 100vh;
+}
+
+@font-face {
+  font-family: 'Onespoonpineapple';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.0/Onespoonpineapple.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'KCC-Kimhoon';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/KCC-Kimhoon-Regular.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Works */
+.works a {
+  font-weight: 700;
+  color: #fc4445;
+  text-shadow: 4px 4px #ffffff;
 }
 
 @keyframes widthGrow {

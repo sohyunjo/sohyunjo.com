@@ -23,49 +23,55 @@ class About extends React.Component {
   render() {
     const { imageLoaded } = this.state;
     return (
-      <section className='about' ref={this.props.ref}>
-        <div className='mw9 w-80 pt5'>
-          <div
-            className='dt'
-            style={{ visibility: imageLoaded ? 'visible' : 'hidden' }}
-          >
-            {/* <div
-              className='db dtc-ns v-mid-ns ph3 relative'
-              style={{ animation: `fadein 1.5s 0.8s both` }}
-            >
-              <img
-                src={mypic}
-                alt='my portrait'
-                className='mypic w100 mw9 w6-ns h-50 hidden'
-              />
-            </div> */}
-            <div className='db dtc-ns v-mid ph3 pr0-ns pl5-ns pl3-m'>
-              {/* {aboutDesc.map((desc, delay) => (
-                <desc.tag
-                  className={desc.className}
-                  // style={{ animation: `fadein 1s ${delay}s both` }}
-                >
-                  {desc.children}
-                </desc.tag>
-              ))} */}
-              <h1 className='mb4 f-subheadline-l f1-m f-subheadline-ns relative lh-solid'>
-                <Typist avgTypingSpeed={40} startDelay={1000}>
-                  {/* <Typist.Delay ms={200}> */}
-                  <span>So Hyun Jo</span>
-                  <Typist.Backspace count={10} delay={500} />
-                  <span>Full Stack Developer</span>
-                  {/* </Typist.Delay> */}
-                </Typist>
-              </h1>
-              <h2
-                className='mb4 f2-l f3-m f3-ns i'
-                style={{ animation: `fadein 3s 3s both` }}
+      <section className='about vh-100 w-100 ' ref={this.props.ref}>
+        <div
+          className='dt relative'
+          style={{ visibility: imageLoaded ? 'visible' : 'hidden' }}
+        >
+          <div className='top-left-header absolute'>
+            <h1 className='f-headline-l f-subheadline lh-solid ma0 '>
+              <Typist avgTypingSpeed={40} startDelay={500}>
+                {/* <Typist.Delay ms={200}> */}
+                <span>SO HYUN JO</span>
+                <Typist.Backspace count={10} delay={500} />
+                <span>WEB DEVELOPER</span>
+                {/* </Typist.Delay> */}
+              </Typist>
+            </h1>
+            <h1 className='f-headline-l f-subheadline lh-solid ma0'>
+              <span
+                style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}
               >
-                I specialize in creating immersive and beautiful web
-                applications through clean and efficient code. Based in{' '}
-                <Emoji symbol='🗽' label='statue of liberty' />
-              </h2>
-            </div>
+                FULL STACK
+              </span>
+            </h1>
+          </div>
+          <div
+            className='bottom-right-header absolute right-0 bottom-0 tr'
+            style={{
+              transform: 'translateY(-5.5px)'
+            }}
+          >
+            <h1 className='f-headline-l f-subheadline  lh-solid ma0'>
+              <span>JO</span>
+            </h1>
+            <h1 className='f-headline-l f-subheadline lh-solid ma0'>
+              <span
+              // style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}
+              >
+                SO HYUN
+              </span>
+            </h1>
+          </div>
+          <div className='center-text dtc v-mid tc vh-100  ph6 ph7-ns ph6-m'>
+            <h2
+              className='mb4 f2-l f2-m f3-ns i'
+              style={{ animation: `fadein 4s 4s both` }}
+            >
+              I specialize in creating immersive and beautiful web applications
+              through clean and efficient code. Based in{' '}
+              <Emoji symbol='🗽' label='statue of liberty' />
+            </h2>
           </div>
         </div>
       </section>
